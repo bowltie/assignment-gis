@@ -21,7 +21,7 @@ Build a map-based application, which lets the user see geo-based data on a map a
 **Application description**: 
 The application shows various points of interest in the city of Amsterdam. 
 The user can display the places that are free to visit with I Amsterdam City Card that are located in a specified radius. The pop up of each place will show a photo of the place, its description, how much you will save, its opening hours and the distance from the chosen point.
-The user can also filter through various food, drinks and fun categories. Those include typical things Amsterdam is known for, such as traditional haring, FEBO, coffeeshops or even stripbars. The user can also display bicycle rentals, bicycle parkins and bicycle repair stations near the line between the two selected points. 
+The user can also filter through various food, drinks and fun categories. Those include typical things Amsterdam is known for, such as traditional haring, FEBO, coffeeshops or even stripbars. The user can also display bicycle rentals, bicycle parkings and bicycle repair stations near the line between the two selected points. 
 
 **Application usage examples**:
 
