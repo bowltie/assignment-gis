@@ -35,9 +35,9 @@ Below you can find displayed the screenshots of the application:
 
 *All places to get haring, pot or have a wild night.*
 
-**Data source**: [I Amsterdam City Card](https://www.iamsterdam.com/en/i-am/i-amsterdam-city-card/what-is-included), OpenStreetMaps, Mapbox
+**Data sources**: [I Amsterdam City Card](https://www.iamsterdam.com/en/i-am/i-amsterdam-city-card/what-is-included), OpenStreetMaps, 
 
-**Technologies used**: PostgreSQL(PostGIS), Node.js, Express, JavaScript, jQuery, Leaflet, MapBox, Bootstrap, [Leaflet.awesome-markers](https://github.com/lvoogdt/Leaflet.awesome-markers)
+**Technologies used**: PostgreSQL(PostGIS), Node.js, Express, JavaScript, jQuery, Leaflet, Mapbox, Bootstrap, [Leaflet.awesome-markers](https://github.com/lvoogdt/Leaflet.awesome-markers)
 
 **Run the project**:
 To run the project, clone the project and run the following commands in the main directory:
