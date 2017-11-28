@@ -49,11 +49,11 @@ The application will be available at http://localhost:3000.
 
 ## Frontend
 
-Relevant frontend code can be found in  (`index.html`) and  (`map.js`). The client takes care of displaying the basic layout of the application with the sidebar panel and the map. It handles the user events such as changing the radius input or (un)checking the checkboxes with jQuery and sends necessary HTTP POST requests to the server to get GeoJSON data. Then it displays the received data on the Leaflet map.
+Relevant frontend code can be found in  `index.html` and  `map.js`. The client takes care of displaying the basic layout of the application with the sidebar panel and the map. It handles the user events such as changing the radius input or (un)checking the checkboxes with jQuery and sends necessary HTTP POST requests to the server to get GeoJSON data. Then it displays the received data on the Leaflet map.
 
 ## Backend
 
-On the server side, Express router is used to define the main routes in  (`index.js`) file. In this file, the connection to the database is established and all queries are created.
+On the server side, Express router is used to define the main routes in  `index.js` file. In this file, the connection to the database is established and all queries are created.
 
 **Routes**:
 
