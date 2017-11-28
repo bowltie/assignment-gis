@@ -27,11 +27,11 @@ The user can also filter through various food, drinks and fun categories. Those 
 
 Below you can find displayed the screenshots of the application:
 
-![Screenshot1](screenshot1.PNG)
+![Screenshot1](/screenshots/screenshot1.PNG)
 
 *Free to visit places in the radius of 1,6 km near the selected location.*
 
-![Screenshot2](screenshot2.PNG)
+![Screenshot2](/screenshots/screenshot2.PNG)
 
 *All places to get haring, pot or have a wild night.*
 
