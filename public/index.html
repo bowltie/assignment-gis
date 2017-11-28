@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>AmsterDAMN</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js"></script>
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+	<link rel="stylesheet" href="stylesheets/leaflet.awesome-markers.css">
+	<script src="javascripts/leaflet.awesome-markers.js"></script>
+	<link rel="stylesheet" href="stylesheets/style.css" />
+	<!-- <script src="https://use.fontawesome.com/91e4e13f13.js"></script> -->
+	<!-- <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> -->
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="row" style="position: relative">
+			<button type="button" class="btn btn-danger" id="btn_reset">Reset</button>
+			<!-- <div class="col-lg-8" style="padding: 10px" id="map-holder">
+				<div class="map-container fill">
+					<div id="map"></div>
+				</div> -->
+			<div id="map-col" class="col-lg-8">
+				<div id="map"></div>
+				<!-- <div id="map-container" class="container" style="padding-right: 10px; position: relative">
+				<h1>The map</h1>
+				<div id="map"></div>
+				</div> -->
+			</div>
+			<div class="col-lg-4">
+				<div class="container">
+					<h1>AmsterDAMN</h1>
+
+					<ul id="myTab" class="nav nav-tabs">
+						<li class="active">
+							<a data-toggle="tab" href="#menu1">Nearest free entrance places</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#menu2">Food, Drinks &amp; Fun</a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#menu3">Bikes</a>
+						</li>
+					</ul>
+
+					<div id="myTabContent" class="tab-content">
+						<div id="menu1" class="tab-pane fade in active">
+
+							<!-- <img class="img-responsive" src="images/citycard.jpg" alt="card" style="width: 150px">
+							<p>Find out which I Amsterdam City Card places are near the selected location. Click on the map to select the location.</p> -->
+
+							<!-- <div class="container"> -->
+							<div class="container">
+								<div class="row">
+
+									<div class="col-xs-9 ">
+										<h3>I Amsterdam City Card</h3>
+										<p>Find out which free entrance with the I Amsterdam City Card places are near the selected location. Drag the blue
+											marker to select the location.</p>
+									</div>
+									<div class="col-xs-3 text-center">
+										<img class="pull-right center-block" src="images/citycard.jpg" alt="card" style="width: 150px">
+									</div>
+
+									<!-- <div class="row">
+									<div class="form-group row">
+										<label for="radius">Radius [km]:</label>
+										<input type="number" class="form-control" id="radius" value="3">
+									</div>
+									<button type="submit" class="btn btn-default">Submit</button>
+								</div> -->
+								</div>
+								<div class="row">
+
+									<div class="form-group ">
+										<label for="radius" class="col-2 col-form-label">Radius [km]:</label>
+										<div class="col-10">
+											<input class="form-control" type="number" value="1" id="radius" step="0.1">
+										</div>
+									</div>
+									<!-- <button type="submit" class="btn btn-default">Submit</button> -->
+								</div>
+							</div>
+						</div>
+						<!-- </div> -->
+
+
+						<div id="menu2" class="tab-pane fade">
+							<h3>Food, drinks and fun</h3>
+							<p>Find out where you can eat, drink, have a pot or be wild! </p>
+
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="haring"> Haring
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="febo"> FEBO
+								</label>
+							</div>
+							<div class="form-check disabled">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="coffeeshop"> Coffeeshops &amp; Cannabis
+								</label>
+							</div>
+							<div class="form-check disabled">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="bar"> Bars
+								</label>
+							</div>
+							<div class="form-check disabled">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="stripclub"> Stripclubs, nightclubs, brothels
+								</label>
+							</div>
+							<div class="form-check disabled">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" id="cinema"> Cinema
+								</label>
+							</div>
+
+							<!-- <button id="btn_filter" type="submit" class="btn btn-default">Filter</button> -->
+						</div>
+						<div id="menu3" class="tab-pane fade">
+							<div class="container">
+								<div class="row">
+									<h3>Bikes</h3>
+									<p>Select the points of the start and the end and the distance and all near bike rentals, bike parking places
+										and bike repair stations will be displayed!
+									</p>
+									
+									<div class="form-group ">
+										<label for="distance" class="col-2 col-form-label">Distance [km]:</label>
+										<div class="col-10">
+											<input class="form-control" type="number" value="1" id="distance" step="0.1">
+										</div>
+									</div>
+
+									<button type="submit" class="btn btn-default" id="btn_bikes">Find</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="javascripts/map.js"></script>
+	<script> 
+		console.log('tu');
+		// $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		// 	console.log('target', target);
+		// 	var target = $(e.target).attr("href") // activated tab
+		// 	alert(target);
+		// });
+
+		$(document).ready(() => {
+			console.log('ready');
+			$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+				console.log('toggle');
+				console.log('target', $(e.target).attr("href"));
+				resetMap($(e.target).attr("href").substring(1));
+			});
+		});
+
+		// $('#btn_filter').on('click', () => {
+		// 	var favorite = [];
+		// 	$.each($("input[class='form-check-input']:checked"), function(){            
+		//         favorite.push($(this).attr("id"));
+		//     });
+		// 	console.log("Checked items are: " + favorite.join(", "));
+		// })
+
+		$("input[type='checkbox']").change(function () {
+			if (this.checked) {
+				console.log('checked', $(this).attr("id"));
+				getAmenity($(this).attr("id"));
+			} else {
+				console.log('unchecked', $(this).attr("id"));
+				hideAmenity($(this).attr("id"));
+			}
+		});
+	</script>
+
+</body>
+
+</html>
